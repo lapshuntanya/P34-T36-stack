@@ -21,7 +21,11 @@ namespace myStack {
 		Node<U>* current;
 	public:
 		Stack() { head = current = nullptr; }
-		~Stack() {   }
+		~Stack() {  
+			while (!isEmpty()) {
+				pop_back();
+			}
+		}
 
 		bool isEmpty()const { 
 			return (head == nullptr);
